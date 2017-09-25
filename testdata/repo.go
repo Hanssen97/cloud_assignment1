@@ -97,7 +97,7 @@ const REPORES string = `{
  "owner": "klyve",
  "committer": "klyve",
  "commits": 276,
- "languages": [
+ "language": [
   "JavaScript",
   "Objective-C",
   "Python",

@@ -20,7 +20,7 @@ type Repository struct {
 	Owner     string   `json:"owner"`
 	Committer string   `json:"committer"`
 	Commits   int      `json:"commits"`
-	Languages []string `json:"languages"`
+	Language  []string `json:"language"`
 }
 
 // Committer helper struct to parse comitter data
@@ -61,7 +61,7 @@ func Repo(w http.ResponseWriter, r *http.Request) {
 	repo.Committer = committers[0].Name
 
 	// Gets languages
-	repo.Languages, err = getLanguages(w, r, repoMap["languages_url"].(string))
+	repo.Language, err = getLanguages(w, r, repoMap["languages_url"].(string))
 	if err != nil {
 		respond(w, Oups{Error: err.Error()}) // sends error response
 		return

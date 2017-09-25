@@ -151,7 +151,7 @@ func TestRespond(t *testing.T) {
 		Owner:     "Tester",
 		Committer: "Committer",
 		Commits:   110,
-		Languages: []string{"JavaScript", "Go", "C++"},
+		Language:  []string{"JavaScript", "Go", "C++"},
 	}
 
 	recorder := httptest.NewRecorder()
@@ -163,7 +163,7 @@ func TestRespond(t *testing.T) {
  "owner": "Tester",
  "committer": "Committer",
  "commits": 110,
- "languages": [
+ "language": [
   "JavaScript",
   "Go",
   "C++"
