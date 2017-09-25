@@ -47,7 +47,7 @@ func Repo(w http.ResponseWriter, r *http.Request) {
 
 	// Sets basic props for Repository
 	repo := Repository{
-		Project: "github.com/" + repoMap["full_name"].(string),
+		Project: repoMap["name"].(string),
 		Owner:   repoMap["owner"].(map[string]interface{})["login"].(string),
 	}
 

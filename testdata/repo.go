@@ -93,7 +93,7 @@ const REPOJSON string = `{
 }`
 
 const REPORES string = `{
- "project": "github.com/klyve/gritapp",
+ "project": "gritapp",
  "owner": "klyve",
  "committer": "klyve",
  "commits": 449,
