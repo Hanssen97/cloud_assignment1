@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/Hanssen97/cloud_assignment1/constants"
+	"github.com/hanssen97/cloud_assignment1/constants"
 )
 
 func TestHomePage(t *testing.T) {

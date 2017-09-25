@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/Hanssen97/cloud_assignment1/constants"
-	"github.com/Hanssen97/cloud_assignment1/handlers"
+	"github.com/hanssen97/cloud_assignment1/constants"
+	"github.com/hanssen97/cloud_assignment1/handlers"
 
 	"google.golang.org/appengine"
 )
