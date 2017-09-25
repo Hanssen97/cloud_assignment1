@@ -5,9 +5,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/Hanssen97/cloud_assignment1/constants"
 	"github.com/Hanssen97/cloud_assignment1/testdata"
-	"github.com/jarcoal/httpmock"
 	"google.golang.org/appengine/aetest"
 )
 
@@ -23,17 +21,17 @@ func TestMain(m *testing.M) {
 
 // Repo() ----------------------------------------------------
 func TestRepo(t *testing.T) {
-	httpmock.Activate()
-	defer httpmock.DeactivateAndReset()
-
-	httpmock.RegisterResponder("GET", constants.GITHUB+"repos/klyve/gritapp",
-		httpmock.NewStringResponder(200, testdata.REPOJSON))
-
-	httpmock.RegisterResponder("GET", constants.GITHUB+"repos/klyve/gritapp/contributors",
-		httpmock.NewStringResponder(200, testdata.REPOCONTRIBUTORS))
-
-	httpmock.RegisterResponder("GET", constants.GITHUB+"repos/klyve/gritapp/languages",
-		httpmock.NewStringResponder(200, testdata.REPOLANGUAGES))
+	// httpmock.Activate()
+	// defer httpmock.DeactivateAndReset()
+	//
+	// httpmock.RegisterResponder("GET", constants.GITHUB+"repos/klyve/gritapp",
+	// 	httpmock.NewStringResponder(200, testdata.REPOJSON))
+	//
+	// httpmock.RegisterResponder("GET", constants.GITHUB+"repos/klyve/gritapp/contributors",
+	// 	httpmock.NewStringResponder(200, testdata.REPOCONTRIBUTORS))
+	//
+	// httpmock.RegisterResponder("GET", constants.GITHUB+"repos/klyve/gritapp/languages",
+	// 	httpmock.NewStringResponder(200, testdata.REPOLANGUAGES))
 
 	req, err := inst.NewRequest("GET", "/projectinfo/v1/github.com/klyve/gritapp", nil)
 	if err != nil {
