@@ -1,7 +1,10 @@
 package main
 
 import (
+	"fmt"
 	"testing"
+
+	"google.golang.org/appengine/aetest"
 )
 
 // var inst aetest.Instance
@@ -20,17 +23,17 @@ import (
 // }
 
 func TestLol(t *testing.T) {
-	// inst, err := aetest.NewInstance(nil)
-	// if err != nil {
-	// 	t.Fatal("Can't create aetest.Instance")
-	// }
-	//
+	inst, err := aetest.NewInstance(nil)
+	if err != nil {
+		t.Fatal("Can't create aetest.Instance")
+	}
+
 	// req, err := inst.NewRequest("GET", "/", nil)
 	// if err != nil {
 	// 	t.Fatal("Can't create request")
 	// }
-	//
-	// fmt.Println(req)
+
+	fmt.Println(inst)
 }
 
 // func TestHomePage(t *testing.T) {
