@@ -32,7 +32,6 @@ func TestHomePage(t *testing.T) {
 			recorder.Body.String(), expected)
 	}
 }
-
 func TestHomePageBadRequest(t *testing.T) {
 	req, err := inst.NewRequest("GET", "/erybad", nil)
 	if err != nil {
