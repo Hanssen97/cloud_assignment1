@@ -1,6 +1,5 @@
 package handlers
 
-//
 // import (
 // 	"net/http"
 // 	"net/http/httptest"
@@ -20,6 +19,11 @@ package handlers
 // 	m.Run()
 //
 // 	defer tearDown()
+// }
+// func tearDown() {
+// 	if inst != nil {
+// 		inst.Close()
+// 	}
 // }
 //
 // // Repo() ----------------------------------------------------
@@ -102,11 +106,5 @@ package handlers
 // 	if recorder.Body.String() != expected {
 // 		t.Errorf("handler returned unexpected body: got %v want %v",
 // 			recorder.Body.String(), expected)
-// 	}
-// }
-//
-// func tearDown() {
-// 	if inst != nil {
-// 		inst.Close()
 // 	}
 // }
