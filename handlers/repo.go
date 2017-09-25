@@ -57,9 +57,7 @@ func Repo(w http.ResponseWriter, r *http.Request) {
 		respond(w, Oups{Error: err.Error()}) // sends error response
 		return
 	}
-	for i := range committers {
-		repo.Commits += committers[i].Contributions
-	}
+	repo.Commits = committers[0].Contributions
 	repo.Committer = committers[0].Name
 
 	// Gets languages
