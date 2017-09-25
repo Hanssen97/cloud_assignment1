@@ -5,8 +5,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/hanssen97/assignment1/constants"
-	"github.com/hanssen97/assignment1/testdata"
+	"github.com/Hanssen97/cloud_assignment1/constants"
+	"github.com/Hanssen97/cloud_assignment1/testdata"
 	"github.com/jarcoal/httpmock"
 	"google.golang.org/appengine/aetest"
 )

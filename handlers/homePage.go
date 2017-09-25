@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/hanssen97/assignment1/constants"
+	"github.com/Hanssen97/cloud_assignment1/constants"
 )
 
 // HomePage returns the homepage

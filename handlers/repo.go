@@ -9,7 +9,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/hanssen97/assignment1/constants"
+	"github.com/Hanssen97/cloud_assignment1/constants"
 	"google.golang.org/appengine"
 	"google.golang.org/appengine/urlfetch"
 )
