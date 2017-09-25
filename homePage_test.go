@@ -1,11 +1,9 @@
 package main
 
 import (
-	"net/http"
-	"net/http/httptest"
+	"fmt"
 	"testing"
 
-	"github.com/Hanssen97/cloud_assignment1/constants"
 	"google.golang.org/appengine/aetest"
 )
 
@@ -24,32 +22,46 @@ import (
 // 	}
 // }
 
-func TestHomePage(t *testing.T) {
-	var inst aetest.Instance
-	inst, _ = aetest.NewInstance(nil)
+func TestLol(t *testing.T) {
+	inst, err := aetest.NewInstance(nil)
+	if err != nil {
+		t.Fatal("Can't create aetest.Instance")
+	}
 
 	req, err := inst.NewRequest("GET", "/", nil)
 	if err != nil {
 		t.Fatal("Can't create request")
 	}
 
-	recorder := httptest.NewRecorder()
-	handler := http.HandlerFunc(HomePage)
-
-	handler.ServeHTTP(recorder, req)
-
-	if status := recorder.Code; status != http.StatusOK {
-		t.Errorf("handler returned wrong status code: got %v want %v",
-			status, http.StatusOK)
-	}
-
-	expected := constants.HOMEPAGE
-
-	if recorder.Body.String() != expected {
-		t.Errorf("handler returned unexpected body: got %v want %v",
-			recorder.Body.String(), expected)
-	}
+	fmt.Println(req)
 }
+
+// func TestHomePage(t *testing.T) {
+// 	var inst aetest.Instance
+// 	inst, _ = aetest.NewInstance(nil)
+//
+// 	req, err := inst.NewRequest("GET", "/", nil)
+// 	if err != nil {
+// 		t.Fatal("Can't create request")
+// 	}
+//
+// 	recorder := httptest.NewRecorder()
+// 	handler := http.HandlerFunc(HomePage)
+//
+// 	handler.ServeHTTP(recorder, req)
+//
+// 	if status := recorder.Code; status != http.StatusOK {
+// 		t.Errorf("handler returned wrong status code: got %v want %v",
+// 			status, http.StatusOK)
+// 	}
+//
+// 	expected := constants.HOMEPAGE
+//
+// 	if recorder.Body.String() != expected {
+// 		t.Errorf("handler returned unexpected body: got %v want %v",
+// 			recorder.Body.String(), expected)
+// 	}
+// }
 
 // func TestHomePageBadRequest(t *testing.T) {
 // 	req, err := inst.NewRequest("GET", "/erybad", nil)
