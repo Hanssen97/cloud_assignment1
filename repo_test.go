@@ -1,5 +1,10 @@
 package main
 
+import (
+	"net/http/httptest"
+	"testing"
+)
+
 // import (
 // 	"net/http"
 // 	"net/http/httptest"
@@ -78,33 +83,33 @@ package main
 // }
 //
 // // Respond() --------------------------------------------------
-// func TestRespond(t *testing.T) {
-// 	data := Repository{
-// 		Project:   "github.com/test/test",
-// 		Owner:     "Tester",
-// 		Committer: "Committer",
-// 		Commits:   110,
-// 		Language:  []string{"JavaScript", "Go", "C++"},
-// 	}
-//
-// 	recorder := httptest.NewRecorder()
-//
-// 	respond(recorder, data)
-//
-// 	expected := `{
-//  "project": "github.com/test/test",
-//  "owner": "Tester",
-//  "committer": "Committer",
-//  "commits": 110,
-//  "language": [
-//   "JavaScript",
-//   "Go",
-//   "C++"
-//  ]
-// }`
-//
-// 	if recorder.Body.String() != expected {
-// 		t.Errorf("handler returned unexpected body: got %v want %v",
-// 			recorder.Body.String(), expected)
-// 	}
-// }
+func TestRespond(t *testing.T) {
+	data := Repository{
+		Project:   "github.com/test/test",
+		Owner:     "Tester",
+		Committer: "Committer",
+		Commits:   110,
+		Language:  []string{"JavaScript", "Go", "C++"},
+	}
+
+	recorder := httptest.NewRecorder()
+
+	respond(recorder, data)
+
+	expected := `{
+ "project": "github.com/test/test",
+ "owner": "Tester",
+ "committer": "Committer",
+ "commits": 110,
+ "language": [
+  "JavaScript",
+  "Go",
+  "C++"
+ ]
+}`
+
+	if recorder.Body.String() != expected {
+		t.Errorf("handler returned unexpected body: got %v want %v",
+			recorder.Body.String(), expected)
+	}
+}
