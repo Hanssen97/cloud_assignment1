@@ -6,7 +6,15 @@ import (
 
 // var inst aetest.Instance
 //
-func TestMain(m *testing.M) {
+// func TestMain(m *testing.M) {
+// 	//inst, _ = aetest.NewInstance(nil)
+//
+// 	//m.Run()
+//
+// 	//defer tearDown()
+// }
+
+func TestMain(t *testing.T) {
 	//inst, _ = aetest.NewInstance(nil)
 
 	//m.Run()
