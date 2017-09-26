@@ -1,4 +1,4 @@
-package main
+package handlers
 
 import (
 	"testing"
@@ -11,7 +11,7 @@ import (
 //
 // 	//m.Run()
 //
-// 	//defer tearDown()
+// 	//defer tearDown()s
 // }
 
 func TestMain(t *testing.T) {
